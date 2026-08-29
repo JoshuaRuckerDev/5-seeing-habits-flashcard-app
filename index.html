@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 Seeing Habits</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+        <h1>5 Seeing Habits</h1>
+        <p>Study. Practice. Master the habits.</p>
+    </header>
+
+
+    <main>
+      <section id="instructions-section">
+  <div class="instruction-card">
+    <h2>How to Study</h2>
+
+    <p>
+      Test your knowledge of the 5 Seeing Habits.
+      Read each question, think of your answer, then flip the card
+      to check yourself.
+    </p>
+
+    <ol>
+      <li>Read the question.</li>
+      <li>Think of your answer before flipping the card.</li>
+      <li>Flip the card to reveal the answer.</li>
+      <li>Mark your answer correct or incorrect.</li>
+      <li>Continue until you complete all five habits.</li>
+    </ol>
+
+    <button id="start-btn">Start Studying</button>
+  </div>
+</section>
+
+<section id="study-section">
+
+  <div id="progress">
+    <p id="card-progress">Card 1 of 5</p>
+    <p id="score-progress">Correct: 0 | Incorrect: 0</p>
+  </div>
+
+  <div id="flashcard">
+
+    <div id="card-front">
+      <p id="habit-label">Aim High in Steering</p>
+      <h2 id="question-text">Question will appear here</h2>
+    </div>
+
+    <div id="card-back">
+      <p id="answer-text">Answer will appear here</p>
+    </div>
+
+  </div>
+
+  <div id="card-controls">
+    <button id="prev-btn">Previous</button>
+    <button id="flip-btn">Flip Card</button>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <div id="answer-controls">
+    <button id="incorrect-btn">Incorrect</button>
+    <button id="correct-btn">Correct</button>
+  </div>
+
+  <button id="shuffle-btn">Shuffle Cards</button>
+
+
+
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>  
