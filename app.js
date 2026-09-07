@@ -416,7 +416,90 @@ function renderCardList() {
   });
 }
 
+function handleContactForm(event) {
+  event.preventDefault();
 
+  const name = document
+    .getElementById("contact-name")
+    .value.trim();
+
+  const email = document
+    .getElementById("contact-email")
+    .value.trim();
+
+  const message = document
+    .getElementById("contact-message")
+    .value.trim();
+
+  const status = document.getElementById("contact-status");
+
+  if (name === "" || email === "" || message === "") {
+    status.textContent = "Please complete all contact fields.";
+    return;
+  }
+
+  status.textContent =
+    `Thanks, ${name}. Your message has been received.`;
+
+  document.getElementById("contact-form").reset();
+}
+
+async function searchSafetyTopic() {
+  const searchInput = document
+    .getElementById("safety-search-input")
+    .value.trim();
+
+  const apiResult =
+    document.getElementById("api-result");
+
+  if (searchInput === "") {
+    apiResult.textContent =
+      "Enter a driving safety topic.";
+
+    return;
+  }
+
+  apiResult.textContent = "Searching...";
+
+  try {
+    const url =
+      "https://en.wikipedia.org/w/api.php" +
+      "?action=query" +
+      "&list=search" +
+      "&srsearch=" +
+      encodeURIComponent(searchInput) +
+      "&format=json" +
+      "&origin=*";
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("API request failed");
+    }
+
+    const data = await response.json();
+
+    const results = data.query.search;
+
+    if (results.length === 0) {
+      apiResult.textContent =
+        "No information found for that topic.";
+
+      return;
+    }
+
+    const firstResult = results[0];
+
+    apiResult.innerHTML = `
+      <h3>${firstResult.title}</h3>
+      <p>${firstResult.snippet}</p>
+    `;
+
+  } catch (error) {
+    apiResult.textContent =
+      "Unable to load safety information.";
+  }
+}
 
 // EVENT LISTENERS
 
@@ -452,6 +535,14 @@ document
 document
   .getElementById("save-card-btn")
   .addEventListener("click", addFlashcard);
+
+  document
+  .getElementById("contact-form")
+  .addEventListener("submit", handleContactForm);
+
+  document
+  .getElementById("api-btn")
+  .addEventListener("click", searchSafetyTopic);
 
 
 

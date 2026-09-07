@@ -3,78 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>5 Seeing Habits</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header>
-        <h1>5 Seeing Habits</h1>
-        <p>Study. Practice. Master the habits.</p>
+      <h1>5 Seeing Habits</h1>
+      <p>Study. Practice. Master the habits.</p>
+
+      <nav>
+        <a href="#instructions-section">Home</a>
+        <a href="#manage-section">Manage Cards</a>
+        <a href="#api-section">Driver Resources</a>
+        <a href="#contact-section">Contact</a>
+      </nav>
     </header>
 
 
     <main>
+
+      <!-- =========================
+           INSTRUCTIONS
+      ========================== -->
+
       <section id="instructions-section">
-  <div class="instruction-card">
-    <h2>How to Study</h2>
 
-    <p>
-      Test your knowledge of the 5 Seeing Habits.
-      Read each question, think of your answer, then flip the card
-      to check yourself.
-    </p>
+        <div class="instruction-card">
 
-    <ol>
-      <li>Read the question.</li>
-      <li>Think of your answer before flipping the card.</li>
-      <li>Flip the card to reveal the answer.</li>
-      <li>Mark your answer correct or incorrect.</li>
-      <li>Continue until you complete all five habits.</li>
-    </ol>
+          <h2>How to Study</h2>
 
-    <button id="start-btn">Start Studying</button>
+          <p>
+            Test your knowledge of the 5 Seeing Habits.
+            Read each question, think of your answer,
+            then flip the card to check yourself.
+          </p>
+
+          <ol>
+            <li>Read the question.</li>
+
+            <li>
+              Think of your answer before flipping the card.
+            </li>
+
+            <li>
+              Flip the card to reveal the answer.
+            </li>
+
+            <li>
+              Mark your answer correct or incorrect.
+            </li>
+
+            <li>
+              Continue until you complete all five habits.
+            </li>
+          </ol>
+
+          <button id="start-btn">
+            Start Studying
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           STUDY SECTION
+      ========================== -->
+
+      <section id="study-section">
+
+        <div id="progress">
+
+          <p id="card-progress">
+            Card 1 of 15
+          </p>
+
+          <p id="score-progress">
+            Correct: 0 | Incorrect: 0
+          </p>
+
+        </div>
+
+
+        <div id="flashcard">
+
+          <div id="card-front">
+
+            <p id="habit-label">
+              Aim High in Steering
+            </p>
+
+            <h2 id="question-text">
+              Question will appear here
+            </h2>
+
+          </div>
+
+
+          <div id="card-back">
+
+            <p id="answer-text">
+              Answer will appear here
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div id="card-controls">
+
+          <button id="prev-btn">
+            Previous
+          </button>
+
+          <button id="flip-btn">
+            Flip Card
+          </button>
+
+          <button id="next-btn">
+            Next
+          </button>
+
+        </div>
+
+
+        <div id="answer-controls">
+
+          <button id="incorrect-btn">
+            Incorrect
+          </button>
+
+          <button id="correct-btn">
+            Correct
+          </button>
+
+        </div>
+
+
+        <button id="shuffle-btn">
+          Shuffle Cards
+        </button>
+
+      </section>
+
+
+      <!-- =========================
+           MANAGE FLASHCARDS
+      ========================== -->
+
+      <section id="manage-section">
+
+        <h2>Manage Flashcards</h2>
+
+        <p>
+          Create your own study cards or edit existing cards.
+        </p>
+
+
+        <div class="card-form">
+
+          <label for="habit-input">
+            Seeing Habit
+          </label>
+
+          <input
+            type="text"
+            id="habit-input"
+            placeholder="Enter seeing habit"
+          />
+
+
+          <label for="question-input">
+            Question
+          </label>
+
+          <input
+            type="text"
+            id="question-input"
+            placeholder="Enter question"
+          />
+
+
+          <label for="answer-input">
+            Answer
+          </label>
+
+          <textarea
+            id="answer-input"
+            placeholder="Enter answer"
+          ></textarea>
+
+
+          <button id="save-card-btn">
+            Add Flashcard
+          </button>
+
+        </div>
+
+
+        <div id="card-list">
+          <!-- JavaScript displays saved cards here -->
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           API SECTION
+      ========================== -->
+
+      <section id="api-section">
+
+  <h2>Driving Safety Topic Lookup</h2>
+
+  <p>
+    Search for a driving or road-safety topic to learn more.
+  </p>
+
+  <input
+    type="text"
+    id="safety-search-input"
+    placeholder="Example: defensive driving"
+  />
+
+  <button id="api-btn">
+    Search Topic
+  </button>
+
+  <div id="api-result">
+    <!-- API information appears here -->
   </div>
+
 </section>
 
-<section id="study-section">
+      <!-- =========================
+           CONTACT FORM
+      ========================== -->
 
-  <div id="progress">
-    <p id="card-progress">Card 1 of 5</p>
-    <p id="score-progress">Correct: 0 | Incorrect: 0</p>
-  </div>
+      <section id="contact-section">
 
-  <div id="flashcard">
+        <h2>Contact</h2>
 
-    <div id="card-front">
-      <p id="habit-label">Aim High in Steering</p>
-      <h2 id="question-text">Question will appear here</h2>
-    </div>
-
-    <div id="card-back">
-      <p id="answer-text">Answer will appear here</p>
-    </div>
-
-  </div>
-
-  <div id="card-controls">
-    <button id="prev-btn">Previous</button>
-    <button id="flip-btn">Flip Card</button>
-    <button id="next-btn">Next</button>
-  </div>
-
-  <div id="answer-controls">
-    <button id="incorrect-btn">Incorrect</button>
-    <button id="correct-btn">Correct</button>
-  </div>
-
-  <button id="shuffle-btn">Shuffle Cards</button>
+        <p>
+          Have a question or suggestion about the study app?
+        </p>
 
 
+        <form id="contact-form">
+
+          <label for="contact-name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="contact-name"
+            required
+          />
+
+
+          <label for="contact-email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="contact-email"
+            required
+          />
+
+
+          <label for="contact-message">
+            Message
+          </label>
+
+          <textarea
+            id="contact-message"
+            required
+          ></textarea>
+
+
+          <button type="submit">
+            Send Message
+          </button>
+
+        </form>
+
+
+        <p id="contact-status"></p>
+
+      </section>
 
     </main>
 
-    <script src="app.js"></script>
-  </body>
 
-</html>  
+    <script src="app.js"></script>
+
+  </body>
+</html>
